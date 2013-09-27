@@ -1,0 +1,37 @@
+<article class="<%= item.layout %>">
+  <% if (item.photos){ %>
+    <%- partial('post/gallery') %>
+  <% } %>
+  <div class="post-content">
+    <div class="header">
+      <%- partial('post/title') %>
+    </div>
+    <div class="entry">
+      <% if (item.excerpt && index){ %>
+        <%- item.excerpt %>
+      <% } else { %>
+        <%- item.content %>
+      <% } %>
+    </div>
+    <footer>
+      <% if (index){ %>
+        <% if (item.excerpt){ %>
+            <a href="<%- config.root %><%- item.path %>#more" class="more-link"><%= theme.excerpt_link %></a>
+        <% } %>
+        <% if (item.comment && config.disqus_shortname){ %>
+          <a href="<%- item.permalink %>#disqus_thread" class="comment-link">Comments</a>
+        <% } %>
+      <% } else { %>
+        <%- partial('post/category') %>
+        <%- partial('post/tag') %>
+        <%- partial('post/share') %>
+      <% } %>
+      <div class="clearfix"></div>
+    </footer>
+
+    <hr>
+
+  </div>
+</article>
+
+<%- partial('comment') %>

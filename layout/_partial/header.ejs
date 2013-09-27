@@ -1,0 +1,19 @@
+<div class="header">
+    <ul class="nav nav-pills pull-right">
+        <li>
+            <div>
+                <ol class="breadcrumb">
+                    <% for (var i in theme.menu){ %>
+                    <li><a href="<%- theme.menu[i] %>"><%= i %></a></li>
+                    <% } %>
+                    <li> <a href="/atom.xml">Rss</a></li>
+                </ol>
+            </div>
+        </li>
+    </ul>
+
+    <h2>
+        <a href="<%- config.root %>"><%= config.title %></a> 
+    </h2>
+    <h5 class="text-muted"><% if (config.subtitle){ %> <%= config.subtitle %> <% } %> </h5>
+</div>
