@@ -7,7 +7,7 @@ widgets:
 - recent_posts
 - link
 - category
-- tag
+- tagcloud 
 
 excerpt_link: Read More
 
