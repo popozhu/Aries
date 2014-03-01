@@ -5,8 +5,7 @@ menu:
 
 widgets: 
 - recent_posts
-- link
-- category
+- recent_comment
 - tagcloud 
 
 excerpt_link: Read More

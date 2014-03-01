@@ -1,8 +1,9 @@
 <div class="alignleft">
   <% if (config.author){ %>
-  &copy; <%= new Date().getFullYear() %> <%= config.author %>
+	  <%= new Date().getFullYear() %> &copy; <%= config.author %>,
   <% } else { %>
-  &copy; <%= new Date().getFullYear() %> <%= config.title %>
+	  <%= new Date().getFullYear() %> &copy; <%= config.title %>,
   <% } %>
+  All rights reserved. Powered by <%- link_to("http://zespia.tw/hexo/", "Hexo") %>.
 </div>
 <div class="clearfix"></div>

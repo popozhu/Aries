@@ -4,9 +4,12 @@
             <div>
                 <ol class="breadcrumb">
                     <% for (var i in theme.menu){ %>
-                    <li><a href="<%- theme.menu[i] %>"><%= i %></a></li>
+						<li><a href="<%- theme.menu[i] %>"><%= i %></a></li>
                     <% } %>
-                    <li> <a href="/atom.xml">Rss</a></li>
+
+					<%- partial('post/blogroll') %> 
+
+                    <li> <a href="/atom.xml">Rss</a> </li>
                 </ol>
             </div>
         </li>

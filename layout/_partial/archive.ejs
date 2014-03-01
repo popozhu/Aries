@@ -25,7 +25,7 @@ var is_first_year = 1;
 
     <div class="archive">
 
-        <div>
+	<div>
         <% page.posts.each(function(item){ %>
             <%
                 var year = item.date.toDate().getFullYear();
@@ -35,29 +35,33 @@ var is_first_year = 1;
             <% if (year != last_year){ 
                 last_year = year;
             %>
-        </div>
+				<!-- end of last year -->
+				</div>
 
-        <!-- start of a new year -->
-        <div data-toggle="collapse" data-target="#<%= year %>"> <div class="archive-title"> <%= year %> </div> </div>
+				<!-- start of a new year -->
+				<div data-toggle="collapse" data-target="#<%= year %>"> 
+					<div class="archive-title">
+						<a href="#" onclick="javascript:return false;"> <%= year %> </a>
+					</div> 
+				</div>
 
-        <!-- 第一年不收缩 -->
-        <div id="<%= year %>" <% if(is_first_year == 1){ is_first_year = 0; %> class="in" <% } else { %> class="collapse" <% } %> >
-
+				<!-- expand the posts of first year -->
+				<div id="<%= year %>" <% if(is_first_year == 1){ is_first_year = 0; %> class="in" <% } else { %> class="collapse" <% } %> >
             <% } %>
 
-            <!-- every item -->
-            <div class="archive_item">
-                <span class="date_class"> <%= item.date.format("YYYY-MM-DD") %> » </span>
-                <% if (item.link){ %>
-                    <% if (item.title){ %>
-                        <span class="title link"><a href="<%- item.link %>" target="_blank"><%= item.title %></a></span>
-                    <% } else { %>
-                        <span class="title link"><a href="<%- item.link %>" target="_blank"><%= item.link %></a></span>
-                    <% } %>
-                <% } else { %>
-                    <span class="title"><a href="<%- config.root %><%- item.path %>"><%= item.title %></a></span>
-                <% } %>
-            </div>
+				<!-- every item -->
+				<div class="archive_item">
+					<span class="date_class"> <%= item.date.format("YYYY-MM-DD") %> » </span>
+					<% if (item.link){ %>
+						<% if (item.title){ %>
+							<span class="title link"><a href="<%- item.link %>" target="_blank"><%= item.title %></a></span>
+						<% } else { %>
+							<span class="title link"><a href="<%- item.link %>" target="_blank"><%= item.link %></a></span>
+						<% } %>
+					<% } else { %>
+						<span class="title"><a href="<%- config.root %><%- item.path %>"><%= item.title %></a></span>
+					<% } %>
+				</div>
 
         <% }); %>
         </div> 

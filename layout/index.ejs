@@ -2,7 +2,7 @@
   <%- partial('_partial/article', {item: item, index: true}) %>
 <% }); %>
 
-<% if (page.per_page > 1) { %>
+<% if (page.per_page >= 1) { %>
 	<%- partial('_partial/pagination') %> 
 <% } %>
 

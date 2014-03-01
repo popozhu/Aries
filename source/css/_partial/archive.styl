@@ -19,12 +19,16 @@
 .archive-title
   color color-link
   font-size 20px
-  margin-top 25px
+  margin-top 5px
   margin-bottom 5px 
   text-shadow 0 0 1px #fff
-  &:after
+  a 
+    &:hover
+  	  text-decoration none 
+
+  &:before
     font-family font-icon
-    content '\f078'
+    content '\f096'
 
   &.tag
     &:before
@@ -33,6 +37,7 @@
   &.category
     &:before
       content '\f07b'
+
 
 .archive_item
   margin-left 25px 
