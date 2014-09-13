@@ -3,36 +3,49 @@
     <%- partial('post/gallery') %>
   <% } %>
   <div class="post-content">
-    <div class="header">
-      <%- partial('post/title') %>
-    </div>
+	<div class="header">
+	  <%- partial('post/title') %>
+	</div>
 
-    <div class="entry">
-      <% if (item.excerpt && index){ %>
-        <%- item.excerpt %>
-      <% } else { %>
-        <%- item.content %>
-      <% } %>
-    </div>
+	<div class="entry">
+	  <% if (item.excerpt && index){ %>
+	    <%- item.excerpt %>
+	  <% } else { %>
+	    <%- item.content %>
+
+	    <!-- current post's categories -->
+	    <!-- todo 
+	    <% if (item.categories && item.categories.length ) { %>
+		<div>
+		     Post in: 
+		     <% item.categories.forEach(function(cat){ %>
+			 <a href="<%- config.category_dir %>/<%- cat.name %>" style="margin-left:3px"><%- cat.name %></a>
+		     <% }) %>
+		</div>
+	    <% } %>
+	    -->
+	<% } %>
+	</div>
 
 	<% if (index){ %>
-		<% if (item.excerpt){ %>
-			<a href="<%- config.root %><%- item.path %>#more" class="more-link"><%= theme.excerpt_link %></a>
-		<% } %>
+	    <% if (item.excerpt){ %>
+		    <a href="<%- config.root %><%- item.path %>#more" class="more-link"><%= theme.excerpt_link %></a>
+	    <% } %>
 	<% } %>
 
 	<hr/>
 
 	<% if (is_post() == true) { %>
-		<nav id="pagination">
-			<% if (page.prev){ %>
-				<a href="<%- config.root %><%- page.prev.path %>" class="alignleft prev" title="<%- page.prev.title %>"><%- page.prev.title %></a>
-			<% } %>
-			<% if (page.next){ %>
-				<a href="<%- config.root %><%- page.next.path %>" class="alignright next" title="<%- page.next.title %>"><%- page.next.title %></a>
-			<% } %>
-		</nav>
+	    <nav id="pagination">
+		<% if (page.prev){ %>
+			<a href="<%- config.root %><%- page.prev.path %>" class="alignleft prev" title="<%- page.prev.title %>"><%- page.prev.title %></a>
+		<% } %>
+		<% if (page.next){ %>
+			<a href="<%- config.root %><%- page.next.path %>" class="alignright next" title="<%- page.next.title %>"><%- page.next.title %></a>
+		<% } %>
+	    </nav>
 	<% } %>
+
   </div>
 </article>
 
