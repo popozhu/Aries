@@ -13,17 +13,8 @@
 	  <% } else { %>
 	    <%- item.content %>
 
-	    <!-- current post's categories -->
-	    <!-- todo 
-	    <% if (item.categories && item.categories.length ) { %>
-		<div>
-		     Post in: 
-		     <% item.categories.forEach(function(cat){ %>
-			 <a href="<%- config.category_dir %>/<%- cat.name %>" style="margin-left:3px"><%- cat.name %></a>
-		     <% }) %>
-		</div>
-	    <% } %>
-	    -->
+	    <%- partial('post/category') %> 
+	    <%- partial('post/tag') %>
 	<% } %>
 	</div>
 

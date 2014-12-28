@@ -41,7 +41,7 @@ var is_first_year = 1;
 				<!-- start of a new year -->
 				<div data-toggle="collapse" data-target="#<%= year %>"> 
 					<div class="archive-title">
-						<a href="#" onclick="javascript:return false;"> <%= year %> </a>
+						<a href="#" onclick="javascript:return false;" style="padding-left:5px"> In <%= year %> </a>
 					</div> 
 				</div>
 
@@ -51,7 +51,8 @@ var is_first_year = 1;
 
 				<!-- every item -->
 				<div class="archive_item">
-					<span class="date_class"> <%= item.date.format("YYYY-MM-DD") %> » </span>
+					<%= item.date.format("YYYY-MM-DD") %> 
+					<span class="item_split"></span>
 					<% if (item.link){ %>
 						<% if (item.title){ %>
 							<span class="title link"><a href="<%- item.link %>" target="_blank"><%= item.title %></a></span>

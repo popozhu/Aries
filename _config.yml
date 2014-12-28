@@ -2,6 +2,8 @@ menu:
   Home: /
   Archives: /archives
   About: /about
+rss: /atom.xml
+search: true
 
 widgets: 
 - recent_posts
@@ -22,5 +24,4 @@ addthis:
 fancybox: true
 
 google_analytics: UA-41590217-1
-rss: /atom.xml
 

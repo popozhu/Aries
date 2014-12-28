@@ -9,23 +9,21 @@ color-link = #0E83CD
 // Font
 font-default = "Open Sans",sans-serif
 
-//open-sans-path = 'font/open_sans'
-//@font-face {
-//    font-family: 'Open Sans';
-//    font-style: normal;
-//    font-weight: 400;
-//    src: local('Open Sans'), local('OpenSans'), url(open-sans-path.woff) format('woff');
-//}
-
 font-icon = FontAwesome
 font-icon-path = 'font/fontawesome-webfont'
-@font-face {
-  font-family 'FontAwesome'
-  font-style normal
-  font-weight normal
-  src url(font-icon-path.eot?#iefix) format('embedded-opentype'), url(font-icon-path.woff) format('woff'), url(font-icon-path.ttf) format('truetype'), url(font-icon-path.svg#FontAwesomeRegular) format('svg')
-}
+font-icon-version = "4.0.3" 
 
+@font-face
+  font-family: FontAwesome
+  font-style: normal
+  font-weight: normal
+  src: url(font-icon-path + ".eot?v=#" + font-icon-version)
+  src: url(font-icon-path + ".eot?#iefix&v=#" + font-icon-version) format("embedded-opentype"),
+       url(font-icon-path + ".woff?v=#" + font-icon-version) format("woff"),
+       url(font-icon-path + ".ttf?v=#" + font-icon-version) format("truetype"),
+       url(font-icon-path + ".svg#fontawesomeregular?v=#" + font-icon-version) format("svg")
+
+// font number ref: http://astronautweb.co/snippet/font-awesome/
 
 // Width
 //page-width = 1200px
