@@ -16,6 +16,9 @@
   };
 
   $('#nav-search-btn').on('click', function(){
+    // set width for search Wrapper, same with the top
+    $searchWrap.width($('#id_header_breadcrumb').width());
+
     if (isSearchAnim) return;
 
     startSearchAnim();

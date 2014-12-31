@@ -6,10 +6,10 @@ rss: /atom.xml
 search: true
 
 widgets: 
-- recent_posts
-- recent_comment
+#- tagcloud 
 - category
-- tagcloud 
+- recent_posts
+#- recent_comment
 
 excerpt_link: Read More
 
