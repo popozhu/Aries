@@ -1,160 +1,161 @@
-.entry
-  font-family font-default
-  .gist
-    background #eee
-    border 1px solid color-border
-    margin-top 15px
-    padding 7px 15px
-    border-radius 2px
-    text-shadow 0 0 1px #fff
-    line-height 1.6
-    overflow auto
-    color #666
-    .gist-file
-      border none
-      //font-family inherit
-      margin 0
-      font-size 0.9em
-      .gist-data
-        background none
-        border-bottom none
-        pre
-          padding 0 !important
-          //font-family font-mono
+// https://github.com/chriskempson/tomorrow-theme
+highlight-background = #2d2d2d
+highlight-current-line = #393939
+highlight-selection = #515151
+highlight-foreground = #cccccc
+highlight-comment = #999999
+highlight-red = #f2777a
+highlight-orange = #f99157
+highlight-yellow = #ffcc66
+highlight-green = #99cc99
+highlight-aqua = #66cccc
+highlight-blue = #6699cc
+highlight-purple = #cc99cc
 
-      .gist-meta
-        background none
-        color color-meta
-        margin-top 5px
-        padding 0
-        text-shadow 0 0 1px #fff
-        font-size 100%
-        a
-          color color-link
-          &:visited
-            color color-link
+article-padding = 20px
+font-size = 12px 
+line-height = 1.6em
 
-figure.highlight
-  background #eee
-  border 1px solid color-border
-  margin-top 15px
-  padding 7px 15px
-  border-radius 2px
-  text-shadow 0 0 1px #fff
-  line-height 1.6
-  overflow auto
-  position relative
-  font-family font-default
-  font-size 0.8em
-  figcaption
-    color color-meta
-    margin-bottom 5px
-    text-shadow 0 0 1px #fff
-    a
-      position absolute
-      right 15px
+$code-block
+  //background: highlight-background
+  margin: 0 article-padding * -1
+  padding: 15px article-padding
+  border-style: solid
+  border-color: color-border
+  border-width: 1px 0
+  overflow: auto
+  //color: highlight-foreground
+  line-height: font-size * line-height
 
+$line-numbers
+  color: #666
+  font-size: 0.85em
+
+article .entry
+  pre, code
+    font-family: font-mono
+  code
+    background: color-background
+    text-shadow: 0 1px #fff
+    padding: 0 0.3em
   pre
-    border none
-    padding 0
-    margin 0
-    white-space pre 
-
-  table
-    margin-top 0
-    border-spacing 0
-
-  .gutter
-    color color-meta
-    padding-right 10px
-    border-right 1px solid color-border
-    text-align right
-
-  .code
-    padding-left 15px
-    border-left 1px solid #fff
-    color #666
+    @extend $code-block
+    code
+      background: none
+      text-shadow: none
+      padding: 0
+  .highlight
+    @extend $code-block
+    pre
+      border: none
+      margin: 0
+      padding: 0
+    table
+      margin: 0
+      width: auto
+    td
+      border: none
+      padding: 0
+    figcaption
+      clearfix()
+      font-size: 0.85em
+      color: highlight-comment
+      line-height: 1em
+      margin-bottom: 1em
+      a
+        float: right
+    .gutter pre
+      @extend $line-numbers
+      text-align: right
+      padding-right: 20px
+    .line
+      height: font-size * line-height
+  .gist
+    margin: 0 article-padding * -1
+    border-style: solid
+    border-color: color-border
+    border-width: 1px 0
+    background: highlight-background
+    padding: 15px article-padding 15px 0
+    .gist-file
+      border: none
+      font-family: font-mono
+      margin: 0
+      .gist-data
+        background: none
+        border: none
+        .line-numbers
+          @extend $line-numbers
+          background: none
+          border: none
+          padding: 0 20px 0 0
+        .line-data
+          padding: 0 !important
+      .highlight
+        margin: 0
+        padding: 0
+        border: none
+      .gist-meta
+        background: highlight-background
+        color: highlight-comment
+        font: 0.85em font-sans
+        text-shadow: 0 0
+        padding: 0
+        margin-top: 1em
+        margin-left: article-padding
+        a
+          color: color-link
+          font-weight: normal
+          &:hover
+            text-decoration: underline
 
 pre
-  // Theme: Solarized - Light
-  // More theme here: http://softwaremaniacs.org/media/soft/highlight/test.html
-  color #666
-  font-family font-default
-  font-size 13px
-
-  .label
   .comment
-  .template_comment
-  .diff .header
-  .doctype
-  .pi
-  .lisp .string
-  .javadoc
-    color #808080
-
-  .keyword
-  .winutils
-  .method
-  .addition
-  .css .tag
-  .request
-  .status
-  .nginx .title
-    //color #859900
-    color #428BCA
-
-  .number
-  .command
-  .string
-  .tag .value
-  .phpdoc
-  .tex .formula
-  .regexp
-  .hexcolor
-    //color #2aa198
-    color #DD1144
-
   .title
-  .localvars
-  .chunk
-  .decorator
-  .built_in
-  .identifier
-  .vhdl
-  .literal
-  .id
-    //color #268bd2
-    color #1E347B
-
-  .attribute
+    color: highlight-comment
   .variable
-  .lisp .body
-  .smalltalk .number
-  .constant
-  .class .title
-  .parent
-  .haskell .type
-    //color #b58900
-    color #008080
-
+  .attribute
+  .tag
+  .regexp
+  .ruby .constant
+  .xml .tag .title
+  .xml .pi
+  .xml .doctype
+  .html .doctype
+  .css .id
+  .css .class
+  .css .pseudo
+    color: highlight-red
+  .number
   .preprocessor
-  .preprocessor .keyword
-  .shebang
-  .symbol
-  .symbol .string
-  .diff .change
-  .special
-  .attr_selector
-  .important
-  .subst
-  .cdata
-  .clojure .title
-    color #cb4b16
-
-  .deletion
-    color #dc322f
-
-code
-  font-family font-default
-  .label
-    font-size 100%
+  .built_in
+  .literal
+  .params
+  .constant
+    color: highlight-orange
+  .class
+  .ruby .class .title
+  .css .rules .attribute
+    color: highlight-green
+  .string
+  .value
+  .inheritance
+  .header
+  .ruby .symbol
+  .xml .cdata
+    color: highlight-green
+  .css .hexcolor
+    color: highlight-aqua
+  .function
+  .python .decorator
+  .python .title
+  .ruby .function .title
+  .ruby .title .keyword
+  .perl .sub
+  .javascript .title
+  .coffeescript .title
+    color: highlight-blue
+  .keyword
+  .javascript .function
+    //color: highlight-purple
+    color: #C7254E
